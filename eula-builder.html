@@ -1,0 +1,573 @@
+<meta charset="utf-8" /> 
+<html>
+	<head>
+
+ <script src="https://cdnjs.cloudflare.com/ajax/libs/knockout/3.4.0/knockout-min.js"></script>
+
+
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js" ></script>
+
+
+<!-- example of what sections should be included -->
+<script class="modifications" name="" language="Text"></script>
+
+<script class="transfer" name="" language="Text"></script>
+
+<script class="embedding" name="" language="Text"></script>
+
+<script class="serverData" name="" language="Text"></script>
+
+<script class="credit" name="" language="Text"></script>
+
+<script class="embeddedDocumentDistribution" name="" language="Text"></script>
+
+<script class="backups" name="" language="Text"></script>
+
+<script class="serviceBureaus" name="" language="Text"></script>
+
+<script class="derivativeWorks" name="" language="Text"></script>
+
+<!-- end example, delete when filled out in sections.html -->
+
+
+
+ <!-- get script elements from sections.html-->
+<link rel="import" href="sections.html">
+
+<script language="JavaScript">
+var importedHtml = document.querySelector('link[rel="import"]').import;
+
+var importedScripts = importedHtml.querySelectorAll('script');
+
+[].forEach.call(importedScripts, function(script) {
+  document.head.appendChild(script)
+});
+
+
+</script>
+
+
+ 
+
+<!-- fill out foundry name -->
+<script language="JavaScript">
+            
+        
+$(function() {
+    $('.foundry-name').on('click change', 
+        function() {
+                }
+    );
+
+
+var initialValue = '[foundry name]'; 
+
+$(".foundry-name").ready(function(){
+        $(".foundry-name").val(initialValue);
+    });
+
+
+$(".foundry-name").ready(function(){
+        $(".foundry-name").html(initialValue);
+    });
+    
+//$(".foundry-name").keyup(function(){
+//        $(".foundry-name").val(this.value);
+//    });
+
+$(".foundry-name").keyup(function(){
+        $(".foundry-name").html(this.value);
+    });
+
+}); // end ready
+
+
+</script>
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+
+
+* {
+   font-family: inherit;
+    font-weight: inherit;
+    font-style: inherit;
+    font-size: inherit;
+    line-height: inherit;
+    text-align: inherit;
+    color: inherit;
+    text-decoration: none;
+    /*list-style: none; */
+    list-style: bullet ;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    box-sizing: border-box; 
+}
+html {
+    font-size: 100%;
+}
+
+body {
+    font-family: Georgia, serif;
+    font-size: .875em;
+    line-height: 1;
+    margin-top: 0;
+    text-align: left;
+    color: #000;
+    background-color: #fff;
+    -webkit-text-size-adjust: 100%;
+    
+    font-kerning: normal;
+    -moz-font-feature-settings: "kern";
+    -webkit-font-feature-settings: "kern";
+    font-feature-settings: "kern";
+}
+	
+.hidden {
+    display: none;
+}
+h2,h3 {
+padding-top:1em;
+padding-bottom:0em;
+
+}
+
+
+
+p + p {
+    margin-top: 1em;
+}
+
+h2 {
+    font-weight: bold;
+}
+
+h2, h3.section-title {
+text-transform: uppercase;
+letter-spacing: 2px;
+}
+
+section {
+    padding-top:2em;
+}
+
+.eula-content{
+    max-width:75ch;
+    padding-left:4em;
+    font-size:1em;
+    line-height:1.4em;
+}
+
+.border{
+    padding-top:2em;
+}
+
+    /* styles for header */
+    #header-wrap {
+            position: fixed;
+            _position:absolute;
+            top:0;
+             _top:expression(eval(document.body.scrollTop));
+        
+            height: 325px;
+            top: 0;
+            width: 100%;
+            /* z-index: 100; */
+            background-color: white; 
+            padding-top:1em;
+            padding-left:1em;
+            min-width:900px;
+
+            border-bottom: 2px solid #E6E7E8;
+            
+        }
+        
+    #wrap { 
+      /* max-width: 900px; */
+      margin: 340px auto; 
+        padding-left:15px;
+        padding-right:15px;
+      
+    }
+
+
+section:focus {
+    outline: none;  
+}
+
+textarea:focus, input:focus, select:focus {
+    outline: none;
+    background-color:rgba(0,0,0,0.1);/**/
+
+background-color:rgba(23,227,227,.7);
+
+}
+
+textarea, input, select {
+    margin:2px; /**/
+
+    outline: none;
+
+background: rgba(0,0,0,0.1);
+
+    background-color:rgba(0,0,0,0.1);
+
+background-color:rgba(23,227,227,.3);
+
+color:#000;
+
+
+}
+
+.hidden {
+    display:none;
+}
+
+.highlight{
+background-color:rgba(23,227,227,.3);
+}
+.foundry-name {
+    background-color:rgba(23,227,227,.3);
+
+}
+
+</style>
+	</head>
+<body>
+
+<div id="header-wrap">
+
+=========================================<br>
+##Options##<br>
+=========================================<br>
+Foundry Name:
+<input type="text" class="foundry-name" value="[the foundry]" title="" />
+<br>
+Foundry Location:
+<input type="text" class="foundry-location" value="[the location]" title="" />
+<br>
+CPUs Covered:
+<input type="text" class="cpu-number" value="[number of cpus]" title="" />
+<br>
+
+
+<div>
+Modifications:
+<select section="modifications"></select>
+
+</div>
+
+
+<div>
+Transfer:
+<select section="transfer"></select>
+
+</div>
+
+
+
+<!-- Desktop Options -->
+
+<div>
+Embedding:
+<select section="embedding"></select>
+
+</div>
+
+
+
+
+
+
+
+<div>
+Servers:
+<select section="serverData"></select>
+
+</div>
+
+
+
+<div>
+Credit:
+<select section="credit"></select>
+
+</div>
+
+
+
+<div>
+Embedded Document Distribution:
+<select section="embeddedDocumentDistribution"></select>
+
+</div>
+
+
+<div>
+Backups:
+<select section="backups"></select>
+
+</div>
+
+
+<div>
+Service Bureaus:
+<select section="serviceBureaus"></select>
+
+</div>
+
+
+<div>
+Derivative Works:
+<select section="derivativeWorks"></select>
+
+</div>
+
+
+</div> <!-- end header wrap -->
+
+
+<div id="wrap">
+
+
+
+
+
+
+<div id = 'eula-top' class='border'>
+###########################################################################</div>
+<section class = 'eula-content' contenteditable="true">
+
+<div class = 'intro' contenteditable="true">
+
+<div id="intro-content">
+<h2>End User License Agreement</h2>
+<!-- boilerplate intro start -->
+[boilerplate intro]
+
+
+</div>
+
+
+<div id="fonts-definition">
+    
+<h3 class="section-title">Fonts: </h3>
+
+[fonts definition]
+
+</div>
+
+<div id="limitations">
+
+<h3 class="section-title"> Limitations: </h3>
+
+
+</div>
+
+
+</div>
+
+<div class="general-terms" contenteditable="true">
+
+<h2>General Terms</h2>
+
+[general intro]
+
+
+<h3 class="section-title">Modifications: </h3>
+<div section="modifications">**************</div>
+
+
+
+<h3 class="section-title">License Transfer: **************</h3>
+<div section="transfer"></div>
+
+
+
+
+
+<!---->
+<h3 class="section-title">
+Testing: </h3>
+<div>
+
+</div>
+
+<h3 class="section-title">
+Special Uses: </h3>
+<div>
+
+</div>
+
+<h3 class="section-title">Credit: **************</h3>
+<div section="credit"></div>
+
+
+
+
+
+
+</div> <!-- general end -->
+
+
+
+<div class = 'desktop' contenteditable="true">
+
+<h2>Terms of Desktop Use</h2>
+
+[desktop intro]
+
+
+
+
+<h3 class="section-title">Document Embedding: **************</h3>
+<div section="embedding"></div>
+
+
+
+
+
+
+
+<h3 class="section-title">Embedded Document Distribution: **************</h3>
+<div section="embeddedDocumentDistribution"></div>
+
+
+
+
+
+<h3 class="section-title">Servers: **************</h3>
+<div section="serverData"></div>
+
+
+<h3 class="section-title">Backups: **************</h3>
+<div section="backups"></div>
+
+<h3 class="section-title">Service Bureaus: **************</h3>
+<div section="serviceBureaus"></div>
+
+
+<h3 class="section-title">Derivative Works: **************</h3>
+<div section="derivativeWorks"></div>
+
+
+</div>
+
+
+</section> <!-- end eula section-->
+
+<div id = 'eula-bottom' class='border'>
+###########################################################################</div>
+
+
+
+
+
+</div> <!-- end wrap-->
+
+
+
+<footer>
+    
+<script type="text/javascript">
+// This runs properly now because it's at the end.
+// We could run it in jQuery's onDocumentReady too,
+// then you could put it at the beginning.
+var self = this; 
+
+ko.bindingHandlers.highlightText = {
+    update: function(element, valueAccessor, allBindings) {
+        // set the data
+        $(element).hide();
+        var value = valueAccessor();
+        ko.bindingHandlers.html.update(element, valueAccessor, allBindings);
+
+        // fade in nicely
+        $(element).fadeIn(500);
+
+         $(element).css('background-color', 'rgba(23,227,227,.3)' );
+
+         $(element).attr('contenteditable','true'); //not sure how to make this only load after a selection has been made and not on page load. 
+
+
+
+    }
+}
+self.viewModel = {
+    sections: ko.observableArray([]),
+
+    getOptions: function(section) {
+        self.viewModel[section+'Options'] = ko.observableArray([]);
+        $( 'script.'+ section ).each(function() {
+            self.viewModel[section+'Options']().push({name: $(this).attr('name'), description: this.innerHTML});
+            self.viewModel[section+'Content'] = ko.observable();
+        });
+    },
+
+
+
+}
+
+// Change the shorthand selects into real
+// knockoutjs data-bind selects
+$("select[section]").each(function() {
+ 
+if($(this).attr('section') !== null){
+
+    // get section name
+    var sectionName = $(this).attr('section');
+    viewModel.sections().push(sectionName);
+    // create data-bind
+    $(this).attr('data-bind', "options: " + sectionName + "Options, optionsText: 'name',"
+             +" value: " + sectionName + "Content, optionsCaption: 'Select...'");
+
+}
+
+
+});
+
+$("div[section]").each(function() {
+
+if($(this).attr('section') !== null){ 
+
+    var sectionName = $(this).attr('section');
+
+
+
+    $(this).attr('data-bind', 
+            "highlightText: "  + sectionName + 'Content() ? ' + sectionName + "Content().description : ''");
+
+}
+
+
+});
+
+// Get the content from the script tags
+for (var i = 0; i < viewModel.sections().length ; i++) {
+     viewModel.getOptions(viewModel.sections()[i]);
+}
+
+// We have to apply bindings LAST
+ko.applyBindings(viewModel);
+
+// for debugging
+// then you can open up the live console
+// and change things on the viewModel
+// window.viewModel= viewModel;
+
+</script>
+</footer>
+
+
+</body>
+
+</html>
