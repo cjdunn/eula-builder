@@ -85,7 +85,75 @@ $(".foundry-name").keyup(function(){
 </script>
 
 
+<!-- fill out foundry location -->
+<script language="JavaScript">
+            
+        
+$(function() {
+    $('.foundry-location').on('click change', 
+        function() {
+                }
+    );
 
+
+var initialValue = '[foundry location]'; 
+
+$(".foundry-location").ready(function(){
+        $(".foundry-location").val(initialValue);
+    });
+
+
+$(".foundry-location").ready(function(){
+        $(".foundry-location").html(initialValue);
+    });
+    
+//$(".foundry-location").keyup(function(){
+//        $(".foundry-location").val(this.value);
+//    });
+
+$(".foundry-location").keyup(function(){
+        $(".foundry-location").html(this.value);
+    });
+
+}); // end ready
+
+
+</script>
+
+<!-- fill out CPUs covered -->
+<script language="JavaScript">
+            
+        
+$(function() {
+    $('.cpus-covered').on('click change', 
+        function() {
+                }
+    );
+
+
+var initialValue = '[CPUs covered]'; 
+
+$(".cpus-covered").ready(function(){
+        $(".cpus-covered").val(initialValue);
+    });
+
+
+$(".cpus-covered").ready(function(){
+        $(".cpus-covered").html(initialValue);
+    });
+    
+//$(".cpus-covered").keyup(function(){
+//        $(".cpus-covered").val(this.value);
+//    });
+
+$(".cpus-covered").keyup(function(){
+        $(".cpus-covered").html(this.value);
+    });
+
+}); // end ready
+
+
+</script>
 
 
 
